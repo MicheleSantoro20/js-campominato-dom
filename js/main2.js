@@ -27,10 +27,11 @@ button.addEventListener('click',
             if (numberBlacklist.includes(i + 1)) {
                 currentSquare.classList.add('bomb');
             }
-            let numeriBombe = document.querySelectorAll('.bomb');
             currentSquare.addEventListener('click',
                 function () {
                     if (numberBlacklist.includes(i + 1)) {
+                        let numeriBombe = document.querySelectorAll('.bomb');
+                        console.log(numeriBombe)
                         currentSquare.classList.add('bomb-click');
                         numeriBombe.forEach(numeriBombe => {
                            numeriBombe.classList.add('revealed');
