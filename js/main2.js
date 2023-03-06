@@ -22,6 +22,13 @@ document.getElementById('score').innerHTML = `Il tuo punteggio è di: ${punteggi
 button.addEventListener('click',
     function () {
 
+      document.getElementById('titolo').innerHTML = ''
+
+      let punteggio = 0;
+
+      document.getElementById('score').innerHTML = `Il tuo punteggio è di: ${punteggio}`;
+
+
       numberBlacklist = [];
 
       for (let c = 1; c <= 16; c++) {
