@@ -17,48 +17,34 @@ let numberBlacklist = [];
 console.log (numberBlacklist)
 
 
-button.addEventListener ('click', 
-   function ()  {
+button.addEventListener('click',
+    function () {
+        gridDom.innerHTML = '';
+        for (let i = 0; i < numeroMassimoCaselle.value; i++) {
+            let currentSquare = createNewSquare(i + 1, numeroMassimoCaselle.value);
+            gridDom.append(currentSquare);
 
-       let i = 0;
-       
-
-       gridDom.innerHTML = '';
-
-
-       while ( i < numeroMassimoCaselle.value) {
-      
-       let currentSquare = createNewSquare (i + 1, numeroMassimoCaselle.value);
-
-        gridDom.append(currentSquare);
-
-        if (numberBlacklist.includes(i + 1)) {
-         currentSquare.classList.add('bomb');
+            if (numberBlacklist.includes(i + 1)) {
+                currentSquare.classList.add('bomb');
+            }
+            let numeriBombe = document.querySelectorAll('.bomb');
+            currentSquare.addEventListener('click',
+                function () {
+                    if (numberBlacklist.includes(i + 1)) {
+                        currentSquare.classList.add('bomb-click');
+                        numeriBombe.forEach(numeriBombe => {
+                           numeriBombe.classList.add('revealed');
+                         });
+                    } else {
+                        currentSquare.classList.add('square-click')
+                        console.log(currentSquare.innerHTML)
+                    }
+                }
+            )
         }
-        let numeri = numberBlacklist.includes(i + 1);
-
-
-        currentSquare.addEventListener ('click',
-           function () {
-
-            if ( numeri == currentSquare.innerHTML) {
-               currentSquare.classList.add('bomb-click');
-              } else {
-               currentSquare.classList.add ('square-click')
-               console.log (currentSquare.innerHTML)
-              }
-
-           }
-        )
-  
-       i++;
-       
-
-       }
-
-   }
-
+    }
 );
+
 
 
 

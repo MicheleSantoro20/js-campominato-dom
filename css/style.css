@@ -89,6 +89,29 @@ h1 {
     background-color: rgb(40, 170, 250);
 }
 
+.bomb-click {
+  background-color: #bf3232;
+}
+
+.revealed {
+  background-color: #bf3232;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .btn {
     display: flex;
     justify-content: center;
