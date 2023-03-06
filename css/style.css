@@ -69,19 +69,21 @@ h1 {
 .square-81 {
   width: calc(800px / 9);
   height: calc(800px / 9);
-  border: 1px solid black;
+  border: 2px solid rgb(85, 6, 221);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: transparent;
 }
 
 .square-49 {
   width: calc(800px / 7);
   height: calc(800px / 7);
-  border: 1px solid black;
+  border: 2px solid rgb(85, 6, 221);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: transparent;
 }
 
 .square-click {
