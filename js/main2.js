@@ -32,16 +32,22 @@ button.addEventListener ('click',
 
         gridDom.append(currentSquare);
 
-        if (currentSquare.innerHTML == numberBlacklist.value) {
+        if (numberBlacklist.includes(i + 1)) {
          currentSquare.classList.add('bomb');
         }
-
+        let numeri = numberBlacklist.includes(i + 1);
 
 
         currentSquare.addEventListener ('click',
            function () {
+
+            if ( numeri == currentSquare.innerHTML) {
+               currentSquare.classList.add('bomb-click');
+              } else {
                currentSquare.classList.add ('square-click')
                console.log (currentSquare.innerHTML)
+              }
+
            }
         )
   
