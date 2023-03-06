@@ -34,7 +34,7 @@ button.addEventListener ('click',
 
         if (currentSquare.innerHTML == numberBlacklist.value) {
          currentSquare.classList.add('bomb');
-      }
+        }
 
 
 
