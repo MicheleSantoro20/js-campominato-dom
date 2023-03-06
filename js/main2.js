@@ -22,6 +22,7 @@ document.getElementById('score').innerHTML = `Il tuo punteggio è di: ${punteggi
 button.addEventListener('click',
     function () {
 
+
       document.getElementById('titolo').innerHTML = ''
 
       let punteggio = 0;
