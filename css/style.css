@@ -28,7 +28,8 @@ button {
 }
 
 main {
-    background-color: aquamarine;
+    background-image: url(https://media.giphy.com/media/1014X8eZiCtBNm/giphy.gif);
+    background-size: contain;
     padding-top: 100px;
     padding-bottom: 100px;
 }
@@ -58,18 +59,17 @@ h1 {
 .square-100 {
     width: calc(800px / 10);
     height: calc(800px / 10);
-    border: 1px solid black;
-    background-color: aquamarine;
+    border: 2px solid rgb(85, 6, 221);
     display: flex;
     align-items: center;
     justify-content: center;
+    color: transparent;
 }
 
 .square-81 {
   width: calc(800px / 9);
   height: calc(800px / 9);
   border: 1px solid black;
-  background-color: aquamarine;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,7 +79,6 @@ h1 {
   width: calc(800px / 7);
   height: calc(800px / 7);
   border: 1px solid black;
-  background-color: aquamarine;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,17 +86,36 @@ h1 {
 
 .square-click {
     background-color: rgb(40, 170, 250);
+    opacity: 0.8;
 }
 
 .bomb-click {
   background-color: #bf3232;
+  opacity: 0.8;
 }
 
 .revealed {
   background-color: #bf3232;
+  opacity: 0.8;
 }
 
+#score  {
+  font-size:  40px;
+  color: red;
+  text-align: center;
+  position: absolute;
+  top: 250px;
+  left: 10px;
+}
 
+#titolo {
+  text-align: center;
+  margin: 0px auto;
+  color: red;
+  font-weight: bold;
+  font-size: 60px;
+  margin-bottom: 40px;
+}
 
 
 
@@ -279,3 +297,19 @@ h1 {
       box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

@@ -14,11 +14,23 @@ let numeroMassimoCaselle = document.getElementById ('difficoltà');
 
 
 let numberBlacklist = []; 
-console.log (numberBlacklist)
 
+let punteggio = 0;
+
+document.getElementById('score').innerHTML = `Il tuo punteggio è di: ${punteggio}`
 
 button.addEventListener('click',
     function () {
+
+      numberBlacklist = [];
+
+      for (let c = 1; c <= 16; c++) {
+
+         const generazioneBombe = generateUniqueRandomNumber (numberBlacklist, 1, difficoltà.value);
+         numberBlacklist.push(generazioneBombe);
+      }
+      console.log (numberBlacklist)
+      let click = true
         gridDom.innerHTML = '';
         for (let i = 0; i < numeroMassimoCaselle.value; i++) {
             let currentSquare = createNewSquare(i + 1, numeroMassimoCaselle.value);
@@ -29,18 +41,31 @@ button.addEventListener('click',
             }
             currentSquare.addEventListener('click',
                 function () {
-                    if (numberBlacklist.includes(i + 1)) {
-                        let numeriBombe = document.querySelectorAll('.bomb');
-                        console.log(numeriBombe)
-                        currentSquare.classList.add('bomb-click');
-                        numeriBombe.forEach(numeriBombe => {
-                           numeriBombe.classList.add('revealed');
-                         });
-                    } else {
-                        currentSquare.classList.add('square-click')
-                        console.log(currentSquare.innerHTML)
-                    }
-                }
+                     if (click == true) {
+                        if (numberBlacklist.includes(i + 1)) {
+                           click = false
+                           let numeriBombe = document.querySelectorAll('.bomb');
+                           console.log(numeriBombe)
+                           currentSquare.classList.add('bomb-click');
+                           numeriBombe.forEach(numeriBombe => {
+                              numeriBombe.classList.add('revealed');
+                            });
+                            document.getElementById('titolo').innerHTML = 'HAI PERSO!'
+                        } else {
+                           let numeriBombe = document.querySelectorAll('.bomb');
+                           currentSquare.classList.add('square-click')
+                           console.log(currentSquare.innerHTML);
+                           punteggio++;
+                           document.getElementById('score').innerHTML = `Il tuo punteggio è di: ${punteggio}`;
+                           if (punteggio == (difficoltà.value - numeriBombe)) {
+                              alert ('Hai Vinto! ')
+                           }
+                        }
+
+                        }
+
+                  }
+               
             )
         }
     }
@@ -58,11 +83,7 @@ function createNewSquare (number, valoreClasse) {
 }
 
 
-for (let c = 1; c <= 16; c++) {
 
-   const generazioneBombe = generateUniqueRandomNumber (numberBlacklist, 1, difficoltà.value);
-   numberBlacklist.push(generazioneBombe);
-}
 
 
 
@@ -86,3 +107,10 @@ function generateRandomNumber(min, max) {
     const number = Math.floor(Math.random() * (max - min +1)) + min;
     return number;
 }
+
+
+
+
+
+
+
