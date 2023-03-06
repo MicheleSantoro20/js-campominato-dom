@@ -29,7 +29,7 @@ button {
 
 main {
     background-image: url(https://media.giphy.com/media/1014X8eZiCtBNm/giphy.gif);
-    background-size: contain;
+    background-size: cover;
     padding-top: 100px;
     padding-bottom: 100px;
 }
